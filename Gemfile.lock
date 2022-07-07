@@ -110,6 +110,10 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
@@ -123,6 +127,8 @@ GEM
     hashie (5.0.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    i18n-debug (1.2.0)
+      i18n (< 2)
     image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
@@ -210,6 +216,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
+    rails-i18n (7.0.5)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (6.1.6)
       actionpack (= 6.1.6)
       activesupport (= 6.1.6)
@@ -322,7 +331,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  dotenv-rails
   faker
+  i18n-debug
   image_processing
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -334,6 +345,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.4)
+  rails-i18n
   rollbar
   rubocop-rails
   sass-rails (>= 6)

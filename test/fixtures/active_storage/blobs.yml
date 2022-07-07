@@ -1,0 +1,1 @@
+image_one_blob: <%= ActiveStorage::Blob.fixture(:filename => 'zero.jpg') %>

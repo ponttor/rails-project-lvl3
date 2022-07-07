@@ -21,4 +21,7 @@ start:
 deploy:
 	git push heroku main
 
+env:
+	include $(HOME)/.env
+
 .PHONY: test

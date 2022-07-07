@@ -26,9 +26,13 @@ gem 'active_storage_validations'
 gem 'aws-sdk-s3'
 gem 'image_processing'
 
+gem 'dotenv-rails'
 gem 'omniauth'
-gem "omniauth-rails_csrf_protection"
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master' 
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'i18n-debug'
+gem 'rails-i18n'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
