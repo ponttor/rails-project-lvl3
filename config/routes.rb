@@ -1,4 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  root "welcome#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'bulletins#index'
+
+  resources :bulletins, only: %i[show new create]
+
+  post 'auth/:provider', to: 'auth#request', as: :auth_request
+  get 'auth/:provider/callback', to: 'auth#callback', as: :callback_auth
 end
