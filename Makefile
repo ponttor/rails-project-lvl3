@@ -2,6 +2,12 @@ setup:
 	bin/setup
 	bin/rails db:fixtures:load
 
+console:
+	bin/rails console
+
+seed:
+	bin/rails db:fixtures:load
+
 install:
 	bundle install
 
@@ -10,13 +16,12 @@ test:
 
 lint:
 	bundle exec rubocop
-	bundle exec slim-lint app/views/
 
 correct:
 	bundle exec rubocop -A
 
 start:
-	heroku local -p 3000
+	bin/rails s
 
 deploy:
 	git push heroku main
@@ -24,4 +29,25 @@ deploy:
 env:
 	include $(HOME)/.env
 
+heroku-start:
+	heroku local
+
+heroku-dbm:
+	heroku run rake db:migrate
+
+heroku-console:
+	heroku run rails console
+
+heroku-seed:
+	heroku run rake db:seed
+
+heroku-logs:
+	heroku logs --tail
+
 .PHONY: test
+
+
+
+
+
+
