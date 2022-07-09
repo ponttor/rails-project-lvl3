@@ -2,6 +2,8 @@
 [![Actions Status](https://github.com/ponttor/rails-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/ponttor/rails-project-lvl3/actions)
 # Bulletin Board
 
+*Bulletin Board – is a service where you can post ads, manage them and search existing ones. It is a full website based on the Ruby On Rails. The app allows to upload files, runs authentication, authorization and manages post states by ruby state machines.*
+
 *Within educational program 'Ruby on Rails developer' by [Hexlet](https://ru.hexlet.io/)*
 
 ## System dependencies
