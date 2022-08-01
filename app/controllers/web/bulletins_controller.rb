@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BulletinsController < ApplicationController
+class Web::BulletinsController < Web::ApplicationController
   def index
     @bulletins = Bulletin.order(created_at: :desc)
   end
@@ -10,6 +10,7 @@ class BulletinsController < ApplicationController
   end
 
   def new
+    # проверить есть не залогинен, если нет id отправляем на главную с флеш сообщением pundit
     @user = User.find(session[:user_id])
     @bulletin = @user.bulletins.build
   end

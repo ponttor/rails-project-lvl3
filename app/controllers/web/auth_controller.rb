@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AuthController < ApplicationController
+class Web::AuthController < Web::ApplicationController
   def callback
     @user = User.find_or_create_from_auth(request.env['omniauth.auth'])
     session[:user_id] = @user.id if @user

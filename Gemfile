@@ -33,6 +33,7 @@ gem 'omniauth-rails_csrf_protection'
 
 gem 'i18n-debug'
 gem 'rails-i18n'
+gem 'pundit'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
