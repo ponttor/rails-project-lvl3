@@ -24,6 +24,3 @@ make start # run server
 make seed # load fixtures
 ```
 
-## Deploy
-
-[Heroku](https://serene-shelf-31540.herokuapp.com)
