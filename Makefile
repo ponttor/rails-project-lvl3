@@ -27,7 +27,7 @@ deploy:
 	git push heroku main
 
 env:
-	include $(HOME)/.env
+	Dotenv.load
 
 heroku-start:
 	heroku local

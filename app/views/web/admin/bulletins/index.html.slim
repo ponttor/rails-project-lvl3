@@ -1,0 +1,31 @@
+.container
+  h2.mb-4
+    = t('.all_bulletins')
+
+  = render 'search_panel'
+
+  table.table.table-borderless
+    thead
+      tr
+        th
+          = t('.name')
+        th
+          = t('.state')
+        th
+          = t('.publication_date')
+        th
+          = t('.action')
+    tbody
+      - @bulletins.each do |bulletin|
+        tr
+          td
+            = link_to bulletin.title, bulletin
+          td
+            = bulletin.state
+          td
+            = distance_of_time_in_words_to_now(bulletin.created_at, highest_measure_only: true)
+          td
+             = link_to t('.show'), bulletin, method: :patch, class: "ms-2"
+             - if !bulletin.archived?
+              = link_to t('.archive'), archive_admin_bulletin_path(bulletin), method: :patch, class: "text-danger ms-2"
+

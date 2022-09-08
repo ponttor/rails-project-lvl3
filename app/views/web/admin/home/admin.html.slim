@@ -1,0 +1,27 @@
+.container
+  h2.mb-4
+    = t('.moderated')
+
+.container
+  table.table.table-borderless
+    thead
+      tr
+        th
+          = t('.name')
+        th
+          = t('.publication_date')
+        th
+          = t('.action')
+    tbody
+      - @bulletins.each do |bulletin|
+        tr
+          td
+            = link_to bulletin.title, bulletin
+          td
+            = distance_of_time_in_words_to_now(bulletin.created_at, highest_measure_only: true)
+          td
+             = link_to t('.publish'), publish_admin_bulletin_path(bulletin), method: :patch, class: "ms-2"
+             = link_to t('.reject'), reject_admin_bulletin_path(bulletin), method: :patch, class: "ms-2"
+             - if !bulletin.archived?
+              = link_to t('.archive'), archive_admin_bulletin_path(bulletin), method: :patch, class: "text-danger ms-2"
+

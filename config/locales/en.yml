@@ -1,4 +1,10 @@
 en:
+  layouts:
+    home:
+      nav_admin:
+        moderated: On moderation
+        all_bulletins: All bulletins
+        all_categories: All categories
   header:
     title: Bulletin board
     add: Add a bulletin
@@ -9,4 +15,3 @@ en:
     submit:
       bulletin:
         create: "Create a bulletin"
-

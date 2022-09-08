@@ -1,0 +1,21 @@
+ru:
+  simple_form:
+    labels:
+      category:
+        edit:
+          name: Название
+        new:
+          name: Название
+      defaults:
+        description: Описание
+        title: Название
+        category: Категория
+        image: Картинка
+  helpers:
+    submit:
+      category:
+        create: Cоздать категорию
+        update: Обновить категорию
+      bulletin:
+        create: Создать объявление
+        update: Обновить объявление

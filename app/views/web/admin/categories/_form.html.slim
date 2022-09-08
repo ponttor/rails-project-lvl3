@@ -1,0 +1,4 @@
+/= simple_form_for([:admin, category]) do |f|
+= simple_form_for category, url: url do |f|
+  = f.input :name, label_html: { class: 'mt-2' }, required: true
+  = f.button :submit, class: 'btn-success mt-4 btn-block', id: 'submit'

@@ -1,0 +1,97 @@
+ru:
+  messages:
+    bulletin_created: Объявление успешно создано
+    bulletin_updated: Объявление успешно обновлено
+    bulletin_archived: Объявление успешно отправлено в архив
+    bulletin_moderated: Объявление успешно отправлено на модерацию
+    category_created: Категория успешно созадана
+    category_updated: Категория успешно обновлена
+    category_deleted: Категория успешно удалена
+    category_not_deleted: Категория не была удалена
+    welcome: Добро пожаловать!
+    buy: До новых встреч!
+  activerecord:
+    attributes:
+      bulletin:
+        category: Категория
+        description: Описание
+        title: Название
+        image: Картинка
+  layouts:
+    web:
+      admin:
+        application: 
+          title: Доска объявлений
+    application:
+      title: Доска объявлений
+    home:
+      nav_admin:
+        moderated: Объявления на модерации
+        all_bulletins: Все объявления
+        all_categories: Все категории
+      header: 
+        title: Доска объявлений
+        main: Главная
+        profile: Мои объявления
+        add: Добавить
+        admin: Админка
+        login: Войти
+        logout: Выйти
+  web:
+    bulletins:
+      search_panel:
+        search_by_name: Искать по названию объявления
+        search_by_category: Выбрать категорию
+      new:
+        new: Добавить объявление
+    admin:
+      bulletins:
+        search_panel:
+          search_by_name: Искать по названию объявления
+          search_by_state: Выбрать состояние
+        index:
+          all_bulletins: Все объявления
+          name: Название
+          state: Состояние
+          publication_date: Дата публикации
+          action: Действие
+          show: Показать
+          archive: Архивировать
+      categories:
+        index:
+          all_categories: Все категории
+          id: Id
+          name: Название
+          action: Действие
+          add_category: Добавить новую категорию
+          edit: Редактировать
+          delete: Удалить
+        edit: 
+          edit: Редактировать категорию
+        new:
+          new: Новая категория
+      home:
+        admin:
+          moderated: Объявления на модерации
+          name: Название
+          publication_date: Дата публикации
+          action: Действие
+          publish: Опубликовать
+          reject: Вернуть
+          archive: В архив
+    profiles:
+      search_panel:
+        search_by_name: Искать по названию объявления
+        search_by_state: Выбрать состояние
+      show:
+        show: Показать
+        edit: Редактировать
+        moderate: На модерацию
+        archive: В архив
+        my_bulletins: Мои объявления
+        new_bulletin: Добавить объявление
+        name: Название
+        state: Состояние
+        publication_date: Дата публикации
+        action: Действие
+  reset: Сброс

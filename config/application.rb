@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
-
+ENV['RANSACK_FORM_BUILDER'] = '::SimpleForm::FormBuilder'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,6 +21,6 @@ module BulletinBoard
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.available_locales = %i[en ru]
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
   end
 end
