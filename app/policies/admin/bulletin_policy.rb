@@ -1,7 +1,7 @@
 class Admin::BulletinPolicy < ApplicationPolicy
 
-  def
-    user.admin
-  end
+  # def
+  #   user.admin
+  # end
 
 end
