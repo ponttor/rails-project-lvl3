@@ -10,9 +10,6 @@ class Web::BulletinsController < Web::ApplicationController
   def show
     @bulletin = Bulletin.find(params[:id])
     authorize @bulletin
-    unless PostPolicy.new(current_user, @bulletin).show?
-      raise Pundit::NotAuthorizedError, "not allowed to update? this #{@bulletin.inspect}"
-    end
   end
 
   # def new
