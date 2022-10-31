@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Bulletin < ApplicationRecord
+  paginates_per 5
+
   include AASM
 
-  aasm :column => 'state' do
+  aasm column: 'state' do
     state :draft, initial: true
     state :under_moderation, :published, :rejected, :archived
 
@@ -20,9 +22,8 @@ class Bulletin < ApplicationRecord
     end
 
     event :archive do
-      transitions from: %w(published draft under_moderation rejected), to: :archived
+      transitions from: %w[published draft under_moderation rejected], to: :archived
     end
-    
   end
 
   validates :title, presence: true, length: { minimum: 3 }

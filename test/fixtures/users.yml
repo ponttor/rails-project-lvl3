@@ -1,16 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: Name 1
+admin:
+  name: Admin
   email: MyString
   admin: true
 
-two:
-  name: Name 2
-  email: MyString_2
-  admin: false
-
-two:
-  name: Name 2
+one:
+  name: Name
   email: MyString_2
   admin: false

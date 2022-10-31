@@ -1,7 +1,21 @@
-class Admin::BulletinPolicy < ApplicationPolicy
+# frozen_string_literal: true
 
-  # def
-  #   user.admin
-  # end
+module Admin
+  class BulletinPolicy < ApplicationPolicy
+    def index?
+      user.admin
+    end
 
+    def archive?
+      user.admin
+    end
+
+    def publish?
+      user.admin
+    end
+
+    def reject?
+      user.admin
+    end
+  end
 end

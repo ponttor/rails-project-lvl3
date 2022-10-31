@@ -31,10 +31,12 @@ gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
 
-gem 'i18n-debug'
-gem 'rails-i18n'
-gem 'pundit'
 gem 'aasm'
+gem 'bootstrap5-kaminari-views'
+gem 'i18n-debug'
+gem 'kaminari'
+gem 'pundit'
+gem 'rails-i18n'
 gem 'ransack', '~> 2.4'
 
 gem 'bootsnap', '>= 1.4.4', require: false

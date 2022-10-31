@@ -1,5 +1,11 @@
-class Web::Admin::HomeController < Web::Admin::ApplicationController
-  def admin
-    @bulletins = Bulletin.order(created_at: :desc).filter(&:under_moderation?)
+# frozen_string_literal: true
+
+module Web
+  module Admin
+    class HomeController < Web::Admin::ApplicationController
+      def admin
+        @bulletins = Bulletin.where(state: 'under_moderation').order(created_at: :desc).page params[:page]
+      end
+    end
   end
 end

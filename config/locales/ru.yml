@@ -39,6 +39,8 @@ ru:
         logout: Выйти
   web:
     bulletins:
+      index:
+        title: Доска объявлений
       search_panel:
         search_by_name: Искать по названию объявления
         search_by_category: Выбрать категорию

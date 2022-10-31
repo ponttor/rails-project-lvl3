@@ -1,5 +1,6 @@
-class BulletinPolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+class BulletinPolicy < ApplicationPolicy
   def index?
     true
   end
@@ -17,18 +18,18 @@ class BulletinPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user_id == current_user.id
+    user && record.user_id == user.id
   end
 
   def update?
-    record.user_id == current_user.id
+    user && record.user_id == user.id
   end
 
-  def archive
-    record.user_id == current_user.id
+  def archive?
+    record.user_id == user.id
   end
 
-  def moderate
-    record.user_id == current_user.id
+  def moderate?
+    record.user_id == user.id
   end
 end

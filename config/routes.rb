@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  scope module: :web do 
+  scope module: :web do
     root 'bulletins#index'
     resources :bulletins, exept: :index
     resource :profile, only: :show
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
     end
 
-    namespace :admin do 
+    namespace :admin do
       root 'home#admin'
       resources :categories, except: :show
       resources :bulletins, only: :index do
@@ -31,7 +31,6 @@ Rails.application.routes.draw do
   end
 end
 
-
-# scope 
+# scope
 # namespace - папка и путь
 # module - только папка

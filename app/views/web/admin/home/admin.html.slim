@@ -24,4 +24,5 @@
              = link_to t('.reject'), reject_admin_bulletin_path(bulletin), method: :patch, class: "ms-2"
              - if !bulletin.archived?
               = link_to t('.archive'), archive_admin_bulletin_path(bulletin), method: :patch, class: "text-danger ms-2"
-
+    = paginate @bulletins, theme: 'bootstrap-5'
+    

@@ -6,6 +6,7 @@
           = t('.my_bulletins')
         hr
         = render 'search_panel'
+
         = link_to t('.new_bulletin'), new_bulletin_path, class: 'ms-2'
         table.table.table-borderless
           thead
@@ -34,3 +35,5 @@
                     = link_to t('.moderate'), moderate_bulletin_path(bulletin), method: :patch, class: 'ms-2'
                   - if !bulletin.archived? 
                     = link_to t('.archive'), archive_bulletin_path(bulletin), method: :patch, class: 'ms-2 text-danger'
+        .mt-4
+          = paginate @bulletins, theme: 'bootstrap-5'

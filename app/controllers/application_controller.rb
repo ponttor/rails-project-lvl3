@@ -4,16 +4,11 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
   include AuthConcern
 
-  # helper_method :current_user
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  # def current_user
-  #   return unless session[:user_id]
-  #   @user = User.find(session[:user_id])
-  # end
+  private
 
-  # def authenticate_user
-  #   return true if current_user.present?
-  #   redirect_to root_path, flash: { danger: t('messages.no_authentication')}
-  #   false
-  # end
+  def user_not_authorized
+    redirect_to root_path
+  end
 end
