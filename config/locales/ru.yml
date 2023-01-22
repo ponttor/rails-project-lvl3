@@ -1,7 +1,17 @@
 ru:
+  only_for_users: Вам необходимо войти в систему или зарегистрироваться для выполнения этого действия
+  only_for_admins: Эта секция доступна только для администраторов
+  only_for_author: Показ доступен только для автора
+  published: Опубликовано
+  draft: Черновик
+  under_moderation: На модерации
+  rejected: Отклонено
+  archived: В архиве
   messages:
     bulletin_created: Объявление успешно создано
     bulletin_updated: Объявление успешно обновлено
+    bulletin_rejected: Объявление успешно обновлено
+    bulletin_published: Объявление успешно опубликовано
     bulletin_archived: Объявление успешно отправлено в архив
     bulletin_moderated: Объявление успешно отправлено на модерацию
     category_created: Категория успешно созадана

@@ -22,14 +22,14 @@ class BulletinPolicy < ApplicationPolicy
   end
 
   def update?
-    user && record.user_id == user.id
+    edit?
   end
 
   def archive?
-    record.user_id == user.id
+    edit?
   end
 
   def moderate?
-    record.user_id == user.id
+    edit?
   end
 end

@@ -13,9 +13,8 @@ module Web
 
       def create
         @category = Category.new(category_params)
-
         if @category.save
-          redirect_to admin_categories_path, flash: { info: t('messages.category_created') }
+          redirect_to admin_categories_path, method: :get, flash: { info: t('messages.category_created') }
         else
           render :new, status: :unprocessable_entity
         end

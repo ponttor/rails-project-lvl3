@@ -3,12 +3,6 @@
 module AuthConcern
   extend ActiveSupport::Concern
 
-  def authenticate_user
-    return if current_user
-
-    redirect_to root_path
-  end
-
   def admin?
     current_user&.admin
   end
@@ -21,9 +15,16 @@ module AuthConcern
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def authenticate_user
+    return if current_user
+
+    redirect_to root_path, flash: { danger: t('only_for_users') }
+    
+  end
+
   def authenticate_admin
     return if admin?
 
-    redirect_to root_path
+    redirect_to root_path, flash: { danger: t('only_for_admins') }
   end
 end

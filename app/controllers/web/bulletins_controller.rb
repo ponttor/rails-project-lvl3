@@ -2,6 +2,8 @@
 
 module Web
   class BulletinsController < Web::ApplicationController
+    before_action :authenticate_user, only: %i[new create edit update destroy to_moderate archive]
+
     def index
       @search_query = Bulletin.published.ransack(params[:search_query])
       @bulletins = @search_query.result
@@ -9,13 +11,18 @@ module Web
     end
 
     def show
-      @bulletin = Bulletin.find(params[:id])
+      @bulletin = current_bulletin
+      if @bulletin.draft? && current_user != @bulletin.user
+        redirect_to root_path, flash: { info: t('only_for_authors') }
+      end
+
       authorize @bulletin
     end
 
     def new
       authorize Bulletin
       @bulletin = current_user.bulletins.build
+      # @bulletin = Bulletin.new
     end
 
     def create
@@ -29,12 +36,15 @@ module Web
     end
 
     def edit
-      @bulletin = Bulletin.find(params[:id])
+      @bulletin = current_bulletin
       authorize @bulletin
+      if @bulletin.draft? && current_user != @bulletin.user
+        redirect_to root_path, notice: t('only_for_authors')
+      end
     end
 
     def update
-      @bulletin = Bulletin.find(params[:id])
+      @bulletin = current_bulletin
       authorize @bulletin
       if @bulletin.update(bulletin_params)
         redirect_to profile_path, flash: { info: t('messages.bulletin_updated') }
@@ -44,7 +54,7 @@ module Web
     end
 
     def archive
-      @bulletin = Bulletin.find params[:id]
+      @bulletin = current_bulletin
       authorize @bulletin
       @bulletin.archive!
 
@@ -52,7 +62,7 @@ module Web
     end
 
     def moderate
-      @bulletin = Bulletin.find params[:id]
+      @bulletin = current_bulletin
       authorize @bulletin
       @bulletin.moderate!
 
@@ -63,6 +73,10 @@ module Web
 
     def bulletin_params
       params.require(:bulletin).permit(:title, :description, :bulletin_id, :category_id, :image)
+    end
+
+    def current_bulletin
+      Bulletin.find params[:id]
     end
   end
 end

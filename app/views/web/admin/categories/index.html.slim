@@ -20,5 +20,5 @@
           td
             = category.name
           td
-            = link_to t('.edit'), edit_admin_category_path(category)
+            = link_to t('.edit'), edit_admin_category_path(category), method: :get
             = link_to t('.delete'), admin_category_path(category), method: :delete, class: "ms-2 text-danger"
