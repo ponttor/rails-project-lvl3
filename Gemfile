@@ -46,7 +46,7 @@ gem 'net-pop', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'sqlite3', '~> 1.4.4'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
