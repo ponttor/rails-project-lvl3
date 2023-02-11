@@ -1,24 +1,25 @@
-.container
-  h2.mb-4
-    = t('.all_categories')
-  table.table.table-borderless
-    p
-      = link_to t('.add_category'), new_admin_category_path
-    thead
-      tr
-        th
-          = t('.id')
-        th
-          = t('.name')
-        th
-          = t('.action')
-    tbody
-      - @categories.each do |category|
+.mt-4.mb-5.pb-5
+  .container
+    h2.mb-4
+      = t('.all_categories')
+    table.table.table-borderless
+      p
+        = link_to t('.add_category'), new_admin_category_path, class: 'btn btn-outline-warning'
+      thead
         tr
-          td
-            = category.id
-          td
-            = category.name
-          td
-            = link_to t('.edit'), edit_admin_category_path(category), method: :get
-            = link_to t('.delete'), admin_category_path(category), method: :delete, class: "ms-2 text-danger"
+          th
+            = t('.id')
+          th
+            = t('.name')
+          th
+            = t('.action')
+      tbody
+        - @categories.each do |category|
+          tr
+            td
+              = category.id
+            td
+              = category.name
+            td
+              = link_to t('.edit'), edit_admin_category_path(category), method: :get, class: 'btn btn-outline-primary'
+              = link_to t('.delete'), admin_category_path(category), method: :delete, data: { confirm: t('.are_you_sure') }, class: 'ms-4 btn btn-outline-danger'

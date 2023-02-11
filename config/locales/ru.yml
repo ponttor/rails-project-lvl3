@@ -17,7 +17,7 @@ ru:
     category_created: Категория успешно созадана
     category_updated: Категория успешно обновлена
     category_deleted: Категория успешно удалена
-    category_not_deleted: Категория не была удалена
+    category_contains_bulletins: Не удалось удалить категорию, так как она содержит объявления
     welcome: Добро пожаловать!
     buy: До новых встреч!
   activerecord:
@@ -69,6 +69,7 @@ ru:
           action: Действие
           show: Показать
           archive: Архивировать
+          are_you_sure: Реали?
       categories:
         index:
           all_categories: Все категории
@@ -78,10 +79,13 @@ ru:
           add_category: Добавить новую категорию
           edit: Редактировать
           delete: Удалить
+          are_you_sure: Реали?
         edit: 
           edit: Редактировать категорию
         new:
           new: Новая категория
+        destroy:
+
       home:
         admin:
           moderated: Объявления на модерации

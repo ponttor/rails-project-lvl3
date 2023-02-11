@@ -28,6 +28,7 @@ module Web
     def create
       authorize Bulletin
       @bulletin = current_user.bulletins.build(bulletin_params)
+
       if @bulletin.save
         redirect_to profile_path, flash: { info: t('messages.bulletin_created') }
       else
@@ -38,6 +39,7 @@ module Web
     def edit
       @bulletin = current_bulletin
       authorize @bulletin
+
       if @bulletin.draft? && current_user != @bulletin.user
         redirect_to root_path, notice: t('only_for_authors')
       end
@@ -46,6 +48,7 @@ module Web
     def update
       @bulletin = current_bulletin
       authorize @bulletin
+
       if @bulletin.update(bulletin_params)
         redirect_to profile_path, flash: { info: t('messages.bulletin_updated') }
       else
