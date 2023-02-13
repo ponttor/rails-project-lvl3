@@ -30,7 +30,7 @@ module Web
       end
 
       private
-  
+
       def current_bulletin
         Bulletin.find params[:id]
       end

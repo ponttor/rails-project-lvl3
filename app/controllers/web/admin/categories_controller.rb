@@ -37,7 +37,7 @@ module Web
       def destroy
         @category = Category.find(params[:id])
         if @category.bulletins.present?
-          redirect_to admin_categories_path, flash: { danger: t('messages.category_contains_bulletins') } 
+          redirect_to admin_categories_path, flash: { danger: t('messages.category_contains_bulletins') }
         else
           @category.destroy
           redirect_to admin_categories_path, flash: { info: t('messages.category_deleted') }

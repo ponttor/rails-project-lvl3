@@ -2,7 +2,7 @@
 
 module Web
   class BulletinsController < Web::ApplicationController
-    before_action :authenticate_user, only: %i[new create edit update destroy to_moderate archive]
+    before_action :authenticate_user, only: %i[new create edit update archive moderate]
 
     def index
       @search_query = Bulletin.published.ransack(params[:search_query])
@@ -40,9 +40,9 @@ module Web
       @bulletin = current_bulletin
       authorize @bulletin
 
-      if @bulletin.draft? && current_user != @bulletin.user
-        redirect_to root_path, notice: t('only_for_authors')
-      end
+      return unless @bulletin.draft? && current_user != @bulletin.user
+
+      redirect_to root_path, notice: t('only_for_authors')
     end
 
     def update

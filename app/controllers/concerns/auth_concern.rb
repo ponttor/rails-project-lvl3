@@ -19,7 +19,6 @@ module AuthConcern
     return if current_user
 
     redirect_to root_path, flash: { danger: t('only_for_users') }
-    
   end
 
   def authenticate_admin
