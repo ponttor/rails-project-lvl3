@@ -9,11 +9,11 @@ html
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .container
-      = render 'layouts/home/header'
-      main.container
-        .row.d-flex
-          .col-3
-            = render 'layouts/home/nav_admin'
-          .col-9
-            = yield
+    = render 'layouts/home/header'
+    main.container
+      = render 'layouts/home/flash'
+      .row.d-flex
+        .col-3
+          = render 'layouts/home/nav_admin'
+        .col-9
+          = yield
