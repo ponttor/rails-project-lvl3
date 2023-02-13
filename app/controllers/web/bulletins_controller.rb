@@ -22,7 +22,6 @@ module Web
     def new
       authorize Bulletin
       @bulletin = current_user.bulletins.build
-      # @bulletin = Bulletin.new
     end
 
     def create

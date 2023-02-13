@@ -11,6 +11,9 @@ ru:
     bulletin_created: Объявление успешно создано
     bulletin_updated: Объявление успешно обновлено
     bulletin_rejected: Объявление успешно обновлено
+    bulletin_not_rejected: Объявление не было обновлено
+    bulletin_not_archived: Объявление не было обновлено
+    bulletin_not_published: Объявление не было обновлено
     bulletin_published: Объявление успешно опубликовано
     bulletin_archived: Объявление успешно отправлено в архив
     bulletin_moderated: Объявление успешно отправлено на модерацию

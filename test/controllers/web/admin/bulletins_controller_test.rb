@@ -14,29 +14,31 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
 
   test 'archive' do
     @bulletin = bulletins(:published)
+    patch archive_admin_bulletin_path(@bulletin)
 
-    patch archive_admin_bulletin_url(@bulletin)
-    assert_redirected_to admin_root_path
     @bulletin.reload
 
     assert { @bulletin.archived? }
+    assert_redirected_to admin_bulletins_path
   end
 
-  # test 'publish' do
-  #   @bulletin = bulletins(:under_moderation)
-  #   patch publish_admin_bulletin_url(@bulletin)
-  #   assert_redirected_to admin_root_path
-  #   @bulletin.reload
-  #   assert { @bulletin.published? }
-  # end
+  test 'publish' do
+    @bulletin = bulletins(:under_moderation)
+    patch publish_admin_bulletin_path(@bulletin)
+
+    @bulletin.reload
+
+    assert @bulletin.published?
+    assert_redirected_to admin_bulletins_path
+  end
 
   test 'reject' do
-    @bulletin = bulletins(:published)
+    @bulletin = bulletins(:under_moderation)
+    patch reject_admin_bulletin_path(@bulletin)
 
-    patch reject_admin_bulletin_url(@bulletin)
-
-    assert_redirected_to admin_root_path
     @bulletin.reload
+
     assert { @bulletin.rejected? }
+    assert_redirected_to admin_bulletins_path
   end
 end
